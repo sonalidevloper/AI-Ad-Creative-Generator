@@ -33,6 +33,7 @@ app.use("/api/ad/generate", generateLimiter);
 
 // Routes
 app.use("/api/ad", require("./src/routes/adroutes"));
+app.use("/api/auth", require("./src/routes/authRoutes"));
 
 // MongoDB
 mongoose.connect(process.env.MONGO_URI)
