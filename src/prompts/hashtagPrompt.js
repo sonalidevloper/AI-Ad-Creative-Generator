@@ -1,14 +1,14 @@
-export const hashtagPrompt = ({ platform, topic }) => `
-Generate hashtags for ${platform}.
+const buildHashtagPrompt = (platform, topic) => {
+  const counts = {
+    Instagram: "8-15",
+    LinkedIn: "3-5",
+    Twitter: "1-2",
+    Facebook: "5-8",
+  };
 
-Rules:
-- Instagram: 8–15
-- LinkedIn: 3–5
-- Twitter: 1 -8 0000
+  return `Generate hashtags for ${platform} about: ${topic}
+Rules: Use ${counts[platform] || "5-10"} hashtags. Make them relevant and trending.
+Return ONLY a JSON array like: ["#tag1", "#tag2", "#tag3"]`;
+};
 
-
-
-–2
-
-Return JSON array.
-`;
+module.exports = buildHashtagPrompt;
