@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +41,10 @@
 .read-the-docs {
   color: #888;
 }
+=======
+/* Global app overrides */
+#root {
+  min-height: 100vh;
+  background: #06060e;
+}
+>>>>>>> bf9b5e3432a6c0d2e38dabf24a98689efbf8348f

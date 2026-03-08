@@ -16,10 +16,18 @@
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
+<<<<<<< HEAD
+=======
+    "express-rate-limit": "^8.3.0",
+>>>>>>> bf9b5e3432a6c0d2e38dabf24a98689efbf8348f
     "fs": "^0.0.1-security",
     "groq-sdk": "^0.37.0",
     "mongodb": "4.1",
     "mongoose": "^9.2.2",
+<<<<<<< HEAD
+=======
+    "multer": "^2.1.1",
+>>>>>>> bf9b5e3432a6c0d2e38dabf24a98689efbf8348f
     "path": "^0.12.7",
     "sharp": "^0.34.5"
   },
@@ -31,4 +39,8 @@
     "url": "https://github.com/tanu123-alt/AI-Ad-Creative-Generator/issues"
   },
   "homepage": "https://github.com/tanu123-alt/AI-Ad-Creative-Generator#readme"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bf9b5e3432a6c0d2e38dabf24a98689efbf8348f
