@@ -1,4 +1,5 @@
-require('dns').setDefaultResultOrder('ipv4first');
+require("dns").setDefaultResultOrder("ipv4first");
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -8,39 +9,49 @@ require("dotenv").config();
 
 const app = express();
 
+/* Environment variables */
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI;
+
+/* CORS */
 app.use(cors({
   origin: "http://localhost:5173",
   credentials: true
 }));
 
+/* Middleware */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ CORS headers for generated images
+/* Static folder for generated images */
 app.use("/generated", (req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
   next();
 }, express.static(path.join(__dirname, "generated")));
 
-// Rate limiter
+/* Rate limiter */
 const generateLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 5,
   message: { error: "Too many requests. Please wait a minute before generating again." }
 });
+
 app.use("/api/ad/generate", generateLimiter);
 
-// Routes
+/* Routes */
 app.use("/api/ad", require("./src/routes/adroutes"));
 app.use("/api/auth", require("./src/routes/authRoutes"));
 
-// MongoDB
-mongoose.connect(process.env.MONGO_URI)
+/* MongoDB Connection */
+mongoose.connect(MONGO_URI)
   .then(() => console.log("MongoDB Connected Successfully"))
   .catch((err) => {
     console.log("MongoDB Connection Failed");
     console.log(err);
   });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+/* Server */
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
