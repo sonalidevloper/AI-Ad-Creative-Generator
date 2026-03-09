@@ -1,4 +1,3 @@
-
 export const captionPrompt = ({ message, emotion, platform, cta }) => `
 Write a ${platform} caption.
 

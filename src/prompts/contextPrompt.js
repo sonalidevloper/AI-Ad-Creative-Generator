@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export const contextPrompt = ({ imageDescription, brandTone, platform }) => `
 You are a marketing strategist.
 
@@ -11,7 +10,6 @@ Return JSON:
   "target_audience": ""
 }
 `;
-=======
 const buildContextPrompt = (product, audience, platform) => {
   const styleByPlatform = {
     Instagram: "vibrant colors, trendy aesthetic, social-media optimized composition",
@@ -35,4 +33,3 @@ Return only the final prompt.`;
 };
 
 module.exports = buildContextPrompt;
->>>>>>> bf9b5e3432a6c0d2e38dabf24a98689efbf8348f

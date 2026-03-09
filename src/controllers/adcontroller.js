@@ -17,7 +17,7 @@ exports.generateAd = async (req, res) => {
     });
 
   }
-
+}
 const Ad = require("../models/Ad");
 
 // Generate Ad
@@ -54,4 +54,3 @@ exports.deleteAd = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 }; 
-                                                                                                                                                                                             
