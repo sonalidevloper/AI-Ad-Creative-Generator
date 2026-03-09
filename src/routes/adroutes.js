@@ -1,5 +1,4 @@
 const express = require("express");
-<<<<<<< HEAD
 
 const router = express.Router();
 
@@ -13,8 +12,6 @@ router.post(
 adController.generateAd
 
 );
-=======
-const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 
@@ -33,6 +30,5 @@ router.get("/", adController.getAds);
 
 // delete ad
 router.delete("/:id", adController.deleteAd);
->>>>>>> bf9b5e3432a6c0d2e38dabf24a98689efbf8348f
 
 module.exports = router;
