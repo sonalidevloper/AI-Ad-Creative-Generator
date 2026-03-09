@@ -1,5 +1,4 @@
 const { generateAdContent } = require("../services/aiServices");
-<<<<<<< HEAD
 
 exports.generateAd = async (req, res) => {
 
@@ -19,7 +18,6 @@ exports.generateAd = async (req, res) => {
 
   }
 
-=======
 const Ad = require("../models/Ad");
 
 // Generate Ad
@@ -55,5 +53,5 @@ exports.deleteAd = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
->>>>>>> bf9b5e3432a6c0d2e38dabf24a98689efbf8348f
-};
+}; 
+                                                                                                                                                                                             
