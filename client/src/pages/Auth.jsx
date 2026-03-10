@@ -12,9 +12,9 @@ export default function Auth() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
 
   const handleSubmit = async () => {
-    if (!form.email) return toast.error("Enter your email");
-    if (!form.password) return toast.error("Enter your password");
-    if (tab === "register" && !form.name) return toast.error("Enter your name");
+    if (!form.email) { toast.error("Enter your email"); return; }
+    if (!form.password) { toast.error("Enter your password"); return; }
+    if (tab === "register" && !form.name) { toast.error("Enter your name"); return; }
 
     setLoading(true);
     try {
@@ -26,7 +26,8 @@ export default function Auth() {
       toast.success(tab === "login" ? "Welcome back! 👋" : "Account created! 🎉");
       navigate("/studio");
     } catch (err) {
-      toast.error("Something went wrong");
+      const msg = err?.response?.data?.error || "Something went wrong";
+      toast.error(msg);
     } finally {
       setLoading(false);
     }
