@@ -169,7 +169,7 @@ const CanvasEditor = forwardRef(({ imageUrl, headline, caption, cta, logoUrl, to
         fabricCanvas.current = null;
       }
     };
-  }, []);
+  }, [cta, tone]);
 
   // Load background image
   useEffect(() => {
